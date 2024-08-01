@@ -1,14 +1,15 @@
 import os
 
-# Шлях до папки
-folder_path = 'picture1'
+def get_file_list(folder_path):
+    # Отримання списку файлів і папок у вказаній директорії
+    files = os.listdir(folder_path)
 
-# Отримання списку файлів у папці
-files = os.listdir(folder_path)
+    # Фільтрування списку, щоб залишити тільки файли (виключаючи папки)
+    file_names = [f for f in files if os.path.isfile(os.path.join(folder_path, f))]
 
-# Фільтрування списку, щоб залишити тільки файли (виключаючи папки)
-file_names = [f for f in files if os.path.isfile(os.path.join(folder_path, f))]
+    return file_names
 
-# Виведення назв файлів
-for file_name in file_names:
-    print(file_name)
+# # Виклик функції та виведення результату
+# folder_path = 'picture1'
+# file_list = get_file_list(folder_path)
+# print(file_list)
