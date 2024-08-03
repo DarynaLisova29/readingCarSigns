@@ -3,7 +3,7 @@ import pytesseract
 from imutils import contours
 from readNameFile import *
 
-def extract_text_from_image(image_path, min_area=5000):
+def youtubeAlgoritm(image_path, min_area=5000):
 
     pytesseract.pytesseract.tesseract_cmd = 'C:\Program Files\Tesseract-OCR/tesseract.exe'
 
@@ -33,7 +33,8 @@ folder_path = 'picture1'
 file_list = get_file_list(folder_path)
 i=1;
 for file_name in file_list:
-    file=folder_path+"/"+file_name
+    file = folder_path + "/" + file_name
     # print(i)
-    print(i, extract_text_from_image(file))
-    i=i+1
+    # print(file_name, algoritm(file))
+    print(f"{i}. Назва файла: {file_name}\n Результат: {youtubeAlgoritm(file)}\n")
+    i = i + 1
